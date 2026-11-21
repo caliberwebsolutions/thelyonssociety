@@ -152,8 +152,8 @@ p { margin: 0; color: var(--ink-soft); }
 .scholarship .photo { min-height: 360px; margin: 20px; }
 .scholarship-body { padding: 36px 36px 36px 16px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
 .scholarship-body > p { font-size: 18px; }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; border-top: 1px solid var(--card-line); border-bottom: 1px solid var(--card-line); margin: 0; }
-.stats div { padding: 16px 12px 16px 0; }
+.stats { display: grid; grid-template-columns: 1fr 1.6fr 1fr; column-gap: 24px; width: 100%; border-top: 1px solid var(--card-line); border-bottom: 1px solid var(--card-line); margin: 0; }
+.stats div { padding: 16px 4px; text-align: center; }
 .stats dt { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
 .stats dd { margin: 0; font-size: 19px; }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; counter-reset: step; }
@@ -406,16 +406,16 @@ form .btn[type="submit"] { align-self: flex-start; }
           <h3>Animal Welfare</h3>
           <p>Covering adoption fees so more shelter pets find permanent homes.</p>
         </a>
-        <a class="card pillar" href="#community-projects" style="text-decoration:none">
+         <div class="card pillar">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M1.5 19v-1.5A3.5 3.5 0 0 1 5 14"/><path d="M22.5 19v-1.5A3.5 3.5 0 0 0 19 14"/></svg>
           <h3>Community Projects</h3>
-          <p><span class="ph">One line on community projects.</span></p>
-        </a>
-        <a class="card pillar" href="#local-support" style="text-decoration:none">
+          <p>Supporting initiatives that improve public spaces and create lasting benefits for the Catoosa County community.</p>
+        </div>
+         <div class="card pillar">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
           <h3>Local Support</h3>
-          <p><span class="ph">One line on local support.</span></p>
-        </a>
+          <p>Providing resources and assistance to local organizations and causes that serve our community.</p>
+        </div>
       </div>
     </div>
 
@@ -475,10 +475,10 @@ form .btn[type="submit"] { align-self: flex-start; }
     <div>
             <div class="heading" id="board"><h2>Board &amp; Leadership</h2><hr class="rule"></div>
       <div class="grid">
-        <div class="card person"><div class="photo has-img"><img src="joey-gray.png" alt="Joseph Lyons" style="object-position: center top"></div><div>Joseph Lyons<div class="role"><span class="ph">Role</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="jacob-gray.png" alt="Jacob Lyons" style="object-position: center top"></div><div>Jacob Lyons<div class="role"><span class="ph">Role</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="maddox-gray.png" alt="Maddox Rose" style="object-position: center top"></div><div>Maddox Rose<div class="role"><span class="ph">Role</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="ayden-gray.png" alt="Ayden Carpenter" style="object-position: center top"></div><div>Ayden Carpenter<div class="role"><span class="ph">Role</span></div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="joey-gray.png" alt="Joseph Lyons" style="object-position: center top"></div><div>Joseph Lyons<div class="role"><span class="ph">Founder</span></div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="jacob-gray.png" alt="Jacob Lyons" style="object-position: center top"></div><div>Jacob Lyons<div class="role"><span class="ph">Co-Founder</span></div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="maddox-gray.png" alt="Maddox Rose" style="object-position: center top"></div><div>Maddox Rose<div class="role"><span class="ph">Compliance Officer</span></div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="ayden-gray.png" alt="Ayden Carpenter" style="object-position: center top"></div><div>Ayden Carpenter<div class="role"><span class="ph">Communications Officer</span></div></div></div>
       </div>
     </div>
   </div>
