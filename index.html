@@ -192,7 +192,7 @@ p { margin: 0; color: var(--ink-soft); }
 .program-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .program-tile { text-decoration: none; padding: 20px 20px 26px; transition: border-color .15s, box-shadow .15s, transform .15s; }
 .program-tile:hover { color: var(--ink); border-color: var(--gold); box-shadow: 0 6px 20px rgba(0,0,0,.06); transform: translateY(-2px); }
-.program-tile .photo { width: 100%; height: 220px; margin-bottom: 8px; }
+.program-tile .photo { width: 100%; height: auto; aspect-ratio: 16 / 9; margin-bottom: 8px; }
 .tile-head { display: flex; align-items: center; gap: 12px; }
 .tile-head .icon { width: 30px; height: 30px; color: var(--gold); flex: none; }
 .tile-meta { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
@@ -205,6 +205,10 @@ p { margin: 0; color: var(--ink-soft); }
 .crumb a:hover { text-decoration: underline; }
 .scholarship-body h2 { font-size: clamp(24px, 3vw, 30px); }
 .support-grid a[aria-current="page"] { background: #fff; box-shadow: inset 0 -3px 0 var(--gold); }
+ 
+/* Wide (16:9) photos keep their whole frame instead of being cropped tall */
+.photo.wide { height: auto !important; min-height: 0 !important; aspect-ratio: 16 / 9; align-self: start; }
+.photo.wide img { height: 100%; }
  
 /* Accordion (FAQ) */
 .faq { display: flex; flex-direction: column; border-top: 1px solid var(--card-line); }
@@ -539,14 +543,14 @@ form .btn[type="submit"] { align-self: flex-start; }
     </div>
     <div class="program-grid">
       <a class="card program-tile" href="#scholarships">
-        <div class="photo"><svg><use href="#i-img"/></svg>Photo</div>
+        <div class="photo has-img wide"><img src="scholarship-certificate.jpg" alt="Framed Chris Lyons First Responder Scholarship certificate from The Lyons Society"></div>
         <div class="tile-head"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V16c2 2 10 2 12 0v-4.5"/><path d="M22 9v6"/></svg><h3>Scholarships</h3></div>
         <p>The Chris Lyons First Responder Scholarship awards $1,000 to a graduating Heritage, Ringgold, or LFO senior whose parent or guardian serves as a first responder.</p>
         <span class="tile-meta">Applications due March 15, 2027</span>
         <span class="btn">Learn More →</span>
       </a>
       <a class="card program-tile" href="#animal-welfare">
-        <div class="photo"><svg><use href="#i-img"/></svg>Photo</div>
+        <div class="photo has-img wide"><img src="animal-welfare-dog.jpg" alt="Happy black Labrador wearing a red bow tie on a leash outdoors" style="object-position: center 30%"></div>
         <div class="tile-head"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="5.5" r="2"/><circle cx="14" cy="5.5" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 3-5 5.5 0 2 2 2.5 5 2.5s5-.5 5-2.5c0-2.5-2-5.5-5-5.5z"/></svg><h3>Animal Welfare</h3></div>
         <p>We pay adoption fees for pets at local animal shelters, giving every pet a better chance at a permanent home.</p>
         <span class="btn">Learn More →</span>
@@ -581,7 +585,7 @@ form .btn[type="submit"] { align-self: flex-start; }
     <div id="chris-lyons-scholarship">
       <div class="heading"><span class="label">Featured Scholarship</span><h2>The Chris Lyons First Responder Scholarship</h2><hr class="rule"></div>
       <div class="scholarship">
-        <div class="photo"><svg><use href="#i-img"/></svg>Photo — Chris Lyons or a past recipient</div>
+        <div class="photo has-img wide"><img src="scholarship-certificate.jpg" alt="Framed Chris Lyons First Responder Scholarship certificate from The Lyons Society"></div>
         <div class="scholarship-body">
           <p>Established in honor of Chris Lyons, this scholarship celebrates his more than 30 years of dedicated service to Catoosa County and the example he has set as a devoted father. Inspired by his commitment to both family and community, the scholarship supports the next generation of first responder families by providing educational opportunities for their children.</p>
           <dl class="stats">
@@ -692,7 +696,7 @@ form .btn[type="submit"] { align-self: flex-start; }
     <nav class="crumb" aria-label="Breadcrumb"><a href="#programs">← All Programs</a></nav>
  
     <div class="scholarship">
-      <div class="photo"><svg><use href="#i-img"/></svg>Photo — an adopted pet or partner shelter</div>
+      <div class="photo has-img wide"><img src="animal-welfare-dog.jpg" alt="Happy black Labrador wearing a red bow tie on a leash outdoors" style="object-position: center 30%"></div>
       <div class="scholarship-body">
         <span class="label">Shelter Adoptions</span>
         <h2>Helping Local Pets Find Home</h2>
