@@ -158,8 +158,9 @@ p { margin: 0; color: var(--ink-soft); }
 .facts strong { display: block; font-weight: 400; font-size: 20px; }
 .values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .person { align-items: stretch; text-align: center; padding: 20px; }
-.person .photo { height: 210px; }
-.person .role { color: var(--muted); font-size: 15px; }
+.person .photo { height: auto; aspect-ratio: 1 / 1; }
+.person .photo img { object-position: center 18%; }
+.person .role { color: var(--ink); font-size: 15px; }
  
 /* Programs: Chris Lyons Scholarship */
 .scholarship { background: #fff; border: 1px solid var(--card-line); border-radius: 4px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -269,7 +270,7 @@ form .btn[type="submit"] { align-self: flex-start; }
 /* Support row + footer */
 .support { border-top: 1px solid var(--line); padding: 56px 0 64px; }
 .support-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); }
-.support-grid a { background: var(--ivory); padding: 22px 12px; display: flex; flex-direction: column; align-items: center; gap: 12px; font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.25; letter-spacing: .16em; text-transform: uppercase; text-align: center; text-decoration: none; }
+.support-grid > * { background: var(--ivory); padding: 22px 12px; display: flex; flex-direction: column; align-items: center; gap: 12px; font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.25; letter-spacing: .16em; text-transform: uppercase; text-align: center; text-decoration: none; }
 .support-grid a:hover { background: #fff; color: var(--ink); }
 .support-grid svg { color: var(--gold); }
 .site-footer { background: var(--dark); color: #e9e5db; font-size: 15px; padding-bottom: env(safe-area-inset-bottom); }
@@ -341,7 +342,7 @@ form .btn[type="submit"] { align-self: flex-start; }
   .form-grid { grid-template-columns: minmax(0, 1fr); }
   form .btn[type="submit"] { align-self: stretch; }
   .support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .support-grid a { font-size: 15px; letter-spacing: .1em; }
+  .support-grid > * { font-size: 15px; letter-spacing: .1em; }
   .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 44px; }
 }
 @media (max-width: 640px) {
@@ -389,7 +390,7 @@ form .btn[type="submit"] { align-self: flex-start; }
         </div>
         <div class="menu-group">
           <a class="menu-top" href="#programs">Our Programs</a>
-          <div class="menu-sub"><a href="#scholarships">Scholarships</a><a href="#animal-welfare">Animal Welfare</a><a href="#community-projects">Community Projects</a><a href="#local-support">Local Support</a><a href="#apply">Scholarship Application</a></div>
+          <div class="menu-sub"><a href="#scholarships">Scholarships</a><a href="#animal-welfare">Animal Welfare</a><a href="#apply">Scholarship Application</a></div>
         </div>
         <div class="menu-group">
           <a class="menu-top" href="#partners">Community Partners</a>
@@ -518,10 +519,10 @@ form .btn[type="submit"] { align-self: flex-start; }
       <div class="heading" id="board"><h2>Board &amp; Leadership</h2><hr class="rule"></div>
       <!-- BOARD: photos are the PNG files next to index.html. To add a role, replace <span class="ph">Role</span> with the role text. -->
       <div class="grid">
-        <div class="card person"><div class="photo has-img"><img src="joey-gray.png" alt="Joseph Lyons" style="object-position: center top"></div><div>Joseph Lyons<div class="role"><span class="ph">Founder</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="jacob-gray.png" alt="Jacob Lyons" style="object-position: center top"></div><div>Jacob Lyons<div class="role"><span class="ph">Co-Founder</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="maddox-gray.png" alt="Maddox Rose" style="object-position: center top"></div><div>Maddox Rose<div class="role"><span class="ph">Compliance Officer</span></div></div></div>
-        <div class="card person"><div class="photo has-img"><img src="ayden-gray.png" alt="Ayden Carpenter" style="object-position: center top"></div><div>Ayden Carpenter<div class="role"><span class="ph">Communications Officer</span></div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="joey-gray.jpg" alt="Joseph Lyons"></div><div>Joseph Lyons<div class="role">Founder</div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="jacob-gray.jpg" alt="Jacob Lyons"></div><div>Jacob Lyons<div class="role">Co-Founder</div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="maddox-gray.jpg" alt="Maddox Rose"></div><div>Maddox Rose<div class="role">Compliance Officer</div></div></div>
+        <div class="card person"><div class="photo has-img"><img src="ayden-gray.jpg" alt="Ayden Carpenter"></div><div>Ayden Carpenter<div class="role">Communications Officer</div></div></div>
       </div>
     </div>
   </div>
@@ -726,71 +727,7 @@ form .btn[type="submit"] { align-self: flex-start; }
   </div>
 </section>
  
-<!-- ---------- PROGRAM: Community Projects ---------- -->
-<section class="tab" id="community-projects" data-title="Community Projects" data-parent="programs">
-  <div class="hero on-dark">
-    <h1 tabindex="-1">Community Projects</h1>
-    <p>Building a stronger Catoosa County.</p>
-    <hr class="rule">
-  </div>
-  <div class="wrap section stack">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="#programs">← All Programs</a></nav>
  
-    <div class="scholarship">
-      <div class="photo"><svg><use href="#i-img"/></svg>Photo</div>
-      <div class="scholarship-body">
-        <span class="label">Community Projects</span>
-        <h2>Community Projects</h2>
-        <p>Supporting initiatives that improve public spaces and create lasting benefits for the Catoosa County community.</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#donate" data-designation="Community Projects">Support This Program →</a>
-          <a class="btn" href="#volunteer">Volunteer →</a>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="heading"><h2>Current Projects</h2><hr class="rule"></div>
-      <div class="grid-3">
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Project name</span></h3><p><span class="ph">A short description.</span></p></div>
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Project name</span></h3><p><span class="ph">A short description.</span></p></div>
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Project name</span></h3><p><span class="ph">A short description.</span></p></div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- ---------- PROGRAM: Local Support ---------- -->
-<section class="tab" id="local-support" data-title="Local Support" data-parent="programs">
-  <div class="hero on-dark">
-    <h1 tabindex="-1">Local Support</h1>
-    <p>Neighbors helping neighbors.</p>
-    <hr class="rule">
-  </div>
-  <div class="wrap section stack">
-    <nav class="crumb" aria-label="Breadcrumb"><a href="#programs">← All Programs</a></nav>
- 
-    <div class="scholarship">
-      <div class="photo"><svg><use href="#i-img"/></svg>Photo</div>
-      <div class="scholarship-body">
-        <span class="label">Local Support</span>
-        <h2>Local Support</h2>
-        <p>Providing resources and assistance to local organizations and causes that serve our community.</p>
-        <div class="actions">
-          <a class="btn btn-solid" href="#donate" data-designation="Local Support">Support This Program →</a>
-          <a class="btn" href="#volunteer">Volunteer →</a>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="heading"><h2>How We Help</h2><hr class="rule"></div>
-      <div class="grid-3">
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Way we help</span></h3><p><span class="ph">A short description.</span></p></div>
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Way we help</span></h3><p><span class="ph">A short description.</span></p></div>
-        <div class="card"><div class="photo" style="width:100%;height:170px"><svg><use href="#i-img"/></svg>Photo</div><h3><span class="ph">Way we help</span></h3><p><span class="ph">A short description.</span></p></div>
-      </div>
-    </div>
-  </div>
-</section>
  
 <!-- =====================================================
      COMMUNITY PARTNERS
@@ -985,8 +922,8 @@ form .btn[type="submit"] { align-self: flex-start; }
     <div class="support-grid">
       <a href="#scholarships" data-program="scholarships"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V16c2 2 10 2 12 0v-4.5"/><path d="M22 9v6"/></svg>Scholarships</a>
       <a href="#animal-welfare" data-program="animal-welfare"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="10" r="2"/><circle cx="10" cy="5.5" r="2"/><circle cx="14" cy="5.5" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 3-5 5.5 0 2 2 2.5 5 2.5s5-.5 5-2.5c0-2.5-2-5.5-5-5.5z"/></svg>Animal Welfare</a>
-      <a href="#community-projects" data-program="community-projects"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M1.5 19v-1.5A3.5 3.5 0 0 1 5 14"/><path d="M22.5 19v-1.5A3.5 3.5 0 0 0 19 14"/></svg>Community Projects</a>
-      <a href="#local-support" data-program="local-support"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>Local Support</a>
+      <div class="is-static"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M1.5 19v-1.5A3.5 3.5 0 0 1 5 14"/><path d="M22.5 19v-1.5A3.5 3.5 0 0 0 19 14"/></svg>Community Projects</div>
+      <div class="is-static"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>Local Support</div>
     </div>
   </div>
 </section>
@@ -1013,8 +950,6 @@ form .btn[type="submit"] { align-self: flex-start; }
           <li><a href="#programs">Our Programs</a></li>
           <li><a href="#scholarships">Scholarships</a></li>
           <li><a href="#animal-welfare">Animal Welfare</a></li>
-          <li><a href="#community-projects">Community Projects</a></li>
-          <li><a href="#local-support">Local Support</a></li>
           <li><a href="#apply">Scholarship Application</a></li>
           <li><a href="#partners">Community Partners</a></li>
           <li><a href="#get-involved">Get Involved</a></li>
